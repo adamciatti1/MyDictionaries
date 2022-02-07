@@ -1,5 +1,7 @@
 # 1) print out the value for the key 'history' using the dictionary below
 
+print(sampleDict['class'])
+
 
 sampleDict = { 
    "class":{ 
