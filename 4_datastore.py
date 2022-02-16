@@ -14,9 +14,13 @@ room-number,use,sq-ft,price
 104,office,150,100
 
 '''
+import csv
+from email import header
 
+outfile = open('retail_space.csv', 'w')
 
-
+headers = 'room-number,use,sq-ft,price \n'
+outfile.write(headers)
 
 datastore = { "medical":[
       { "room-number": 100,
@@ -47,3 +51,11 @@ datastore = { "medical":[
 
       ]
 }
+
+for row in datastore["medical"]:
+  outfile.write(str(row['room-number']) +  ',' +
+  row['use'] + ',' +
+  str(row['sq-ft']) + ',' +
+  str(row['price']) + '\n')
+
+outfile.close()
